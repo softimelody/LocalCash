@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta Holográfica Liquid Glass -->
+    <color name="rosa_bebe">#FFC2D4</color>
+    <color name="lavanda_suave">#E0D7FF</color>
+    <color name="lavanda_digital">#A89FDF</color>
+    <color name="lavanda_profunda">#4A3B78</color> <!-- Violeta digital profundo derivado de la paleta -->
+    <color name="menta_neon">#00B894</color>
+    <color name="texto_oceano">#4A3B78</color> <!-- Reemplazado azul oscuro por violeta profundo armónico -->
+    <color name="texto_cristal">#4A3B78</color>
+
+    <color name="glass_fondo">#66FFFFFF</color> <!-- Blanco al 40% -->
+    <color name="glass_borde_brillo">#B3FFFFFF</color> <!-- Blanco al 70% -->
+
+    <!-- Compatibilidad Liquid Glass -->
+    <color name="bg_dark_obsidian">#E0D7FF</color>
+    <color name="card_dark_bg">#66FFFFFF</color>
+    <color name="card_dark_stroke">#B3FFFFFF</color>
+    <color name="glass_card_bg">#66FFFFFF</color>
+    <color name="glass_card_stroke">#B3FFFFFF</color>
+
+    <color name="cash_mint">#00B894</color>
+    <color name="cyber_mint">#00B894</color>
+    <color name="neon_blue">#4A3B78</color>
+    <color name="iri_cyan">#4A3B78</color>
+    <color name="iri_violet">#4A3B78</color>
+    <color name="iri_pink">#4A3B78</color>
+    <color name="lavender_deep">#4A3B78</color>
+    <color name="lavender_pastel">#E0D7FF</color>
+    <color name="accent_pink">#4A3B78</color>
+    <color name="falabella_lime">#00B894</color>
+    <color name="falabella_green_primary">#4A3B78</color>
+
+    <color name="income_green">#00B894</color>
+    <color name="expense_red">#D63031</color>
+    <color name="badge_offline_bg">#66FFFFFF</color>
+
+    <color name="text_primary">#4A3B78</color>
+    <color name="text_secondary">#4A3B78</color>
+</resources>
