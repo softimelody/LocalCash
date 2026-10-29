@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvBalance;
     private TextView tvAccountNumber;
 
+    private View cardNavCuentas;
+    private View cardNavCompras;
+    private View cardNavDeudas;
     private View cardNavMap;
     private View cardNavContactos;
     private View cardNavMovimientos;
@@ -72,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
         MaterialButton btnTransfer = findViewById(R.id.btnTransfer);
         MaterialButton btnDeposit = findViewById(R.id.btnDeposit);
 
+        cardNavCuentas = findViewById(R.id.cardNavCuentas);
+        cardNavCompras = findViewById(R.id.cardNavCompras);
+        cardNavDeudas = findViewById(R.id.cardNavDeudas);
         cardNavMap = findViewById(R.id.cardNavMap);
         cardNavContactos = findViewById(R.id.cardNavContactos);
         cardNavMovimientos = findViewById(R.id.cardNavMovimientos);
@@ -242,6 +248,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupNavigation() {
+        if (cardNavCuentas != null) {
+            cardNavCuentas.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.this, CuentasActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            });
+        }
+
+        if (cardNavCompras != null) {
+            cardNavCompras.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.this, ComprasActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            });
+        }
+
+        if (cardNavDeudas != null) {
+            cardNavDeudas.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.this, DeudasActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            });
+        }
+
         if (cardNavMap != null) {
             cardNavMap.setOnClickListener(v -> {
                 Intent intent = new Intent(MainActivity.this, MapActivity.class);

@@ -50,7 +50,7 @@
                         android:textColor="@color/texto_oceano"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        tools:text="Hola " />
+                        tools:text="Hola" />
 
                     <TextView
                         android:id="@+id/tvAccountSubtitle"
@@ -65,7 +65,7 @@
 
             </LinearLayout>
 
-            <!-- Requerimiento 4: ConstraintLayout para Saldo Total usando bg_liquid_glass (0dp elevation) -->
+            <!-- Card Saldo Total -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardSaldoTotal"
                 android:layout_width="match_parent"
@@ -74,7 +74,6 @@
                 android:background="@drawable/bg_liquid_glass"
                 android:padding="28dp">
 
-                <!-- Etiqueta con Menta Neón (+2.4% este mes) -->
                 <TextView
                     android:id="@+id/tvStatTag"
                     android:layout_width="wrap_content"
@@ -186,6 +185,174 @@
                 android:layout_marginBottom="12dp"
                 android:layout_gravity="start" />
 
+            <!-- Card Nav Cuentas -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardNavCuentas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/glass_fondo"
+                app:strokeColor="@color/glass_borde_brillo"
+                app:strokeWidth="0.5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="18dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@android:drawable/ic_menu_agenda"
+                        app:tint="@color/texto_oceano" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gestión de Cuentas Financieras"
+                            android:textColor="@color/texto_oceano"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Administrar, crear y ajustar saldos"
+                            android:textSize="12sp"
+                            android:textColor="@color/texto_oceano" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card Nav Compras y Agendamiento -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardNavCompras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/glass_fondo"
+                app:strokeColor="@color/glass_borde_brillo"
+                app:strokeWidth="0.5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="18dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@android:drawable/ic_menu_day"
+                        app:tint="@color/texto_oceano" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Compras y Agendamiento"
+                            android:textColor="@color/texto_oceano"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Historial y programación de compras futuras"
+                            android:textSize="12sp"
+                            android:textColor="@color/texto_oceano" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card Nav Deudas y Gastos Compartidos -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardNavDeudas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/glass_fondo"
+                app:strokeColor="@color/glass_borde_brillo"
+                app:strokeWidth="0.5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="18dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@android:drawable/ic_menu_share"
+                        app:tint="@color/texto_oceano" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gastos Compartidos y Deudas"
+                            android:textColor="@color/texto_oceano"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dividir gastos grupales y saldos pendientes"
+                            android:textSize="12sp"
+                            android:textColor="@color/texto_oceano" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
             <!-- Card Nav Map -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardNavMap"
@@ -206,8 +373,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:padding="18dp"
-                    android:background="@null">
+                    android:padding="18dp">
 
                     <ImageView
                         android:layout_width="32dp"
@@ -263,8 +429,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:padding="18dp"
-                    android:background="@null">
+                    android:padding="18dp">
 
                     <ImageView
                         android:layout_width="32dp"
@@ -320,8 +485,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:padding="18dp"
-                    android:background="@null">
+                    android:padding="18dp">
 
                     <ImageView
                         android:layout_width="32dp"

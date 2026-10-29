@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "localcash.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     // Tabla Productos (legacy)
     public static final String TABLE_PRODUCT = "productos";
@@ -41,6 +41,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_MOV_DESCRIPCION = "descripcion";
     public static final String COL_MOV_LATITUD = "latitud";
     public static final String COL_MOV_LONGITUD = "longitud";
+
+    // Tabla Compras y Agendamiento
+    public static final String TABLE_COMPRAS = "compras";
+    public static final String COL_COMPRA_ID = "id";
+    public static final String COL_COMPRA_ID_PRODUCTO = "id_producto";
+    public static final String COL_COMPRA_NOMBRE_PROD = "nombre_producto";
+    public static final String COL_COMPRA_CANTIDAD = "cantidad";
+    public static final String COL_COMPRA_PRECIO_TOTAL = "precio_total";
+    public static final String COL_COMPRA_FECHA = "fecha";
+    public static final String COL_COMPRA_FECHA_PROG = "fecha_programada";
+    public static final String COL_COMPRA_ES_PROG = "es_programada";
+    public static final String COL_COMPRA_ESTADO = "estado";
+
+    // Tabla Deudas y Gastos Compartidos
+    public static final String TABLE_DEUDAS = "deudas";
+    public static final String COL_DEUDA_ID = "id";
+    public static final String COL_DEUDA_ID_CONTACTO = "id_contacto";
+    public static final String COL_DEUDA_NOMBRE_CONTACTO = "nombre_contacto";
+    public static final String COL_DEUDA_MONTO_TOTAL = "monto_total";
+    public static final String COL_DEUDA_NUM_PERSONAS = "num_personas";
+    public static final String COL_DEUDA_MONTO_POR_PERSONA = "monto_por_persona";
+    public static final String COL_DEUDA_DESCRIPCION = "descripcion";
+    public static final String COL_DEUDA_FECHA = "fecha";
+    public static final String COL_DEUDA_ESTADO_PAGO = "estado_pago";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -85,6 +109,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL_MOV_LONGITUD + " REAL, " +
                 "FOREIGN KEY(" + COL_MOV_ID_CUENTA + ") REFERENCES " + TABLE_CUENTAS + "(" + COL_CUENTA_ID + "))";
         db.execSQL(sqlMovimientos);
+
+        // SQL Tabla Compras
+        String sqlCompras = "CREATE TABLE " + TABLE_COMPRAS + " (" +
+                COL_COMPRA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COL_COMPRA_ID_PRODUCTO + " INTEGER, " +
+                COL_COMPRA_NOMBRE_PROD + " TEXT NOT NULL, " +
+                COL_COMPRA_CANTIDAD + " INTEGER NOT NULL, " +
+                COL_COMPRA_PRECIO_TOTAL + " REAL NOT NULL, " +
+                COL_COMPRA_FECHA + " TEXT NOT NULL, " +
+                COL_COMPRA_FECHA_PROG + " TEXT, " +
+                COL_COMPRA_ES_PROG + " INTEGER NOT NULL, " +
+                COL_COMPRA_ESTADO + " TEXT NOT NULL)";
+        db.execSQL(sqlCompras);
+
+        // SQL Tabla Deudas
+        String sqlDeudas = "CREATE TABLE " + TABLE_DEUDAS + " (" +
+                COL_DEUDA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COL_DEUDA_ID_CONTACTO + " INTEGER, " +
+                COL_DEUDA_NOMBRE_CONTACTO + " TEXT NOT NULL, " +
+                COL_DEUDA_MONTO_TOTAL + " REAL NOT NULL, " +
+                COL_DEUDA_NUM_PERSONAS + " INTEGER NOT NULL, " +
+                COL_DEUDA_MONTO_POR_PERSONA + " REAL NOT NULL, " +
+                COL_DEUDA_DESCRIPCION + " TEXT NOT NULL, " +
+                COL_DEUDA_FECHA + " TEXT NOT NULL, " +
+                COL_DEUDA_ESTADO_PAGO + " TEXT NOT NULL)";
+        db.execSQL(sqlDeudas);
     }
 
     @Override
@@ -93,6 +143,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_MOVIMIENTOS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTOS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CUENTAS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_COMPRAS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DEUDAS);
         onCreate(db);
     }
 }

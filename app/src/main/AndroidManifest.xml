@@ -45,6 +45,21 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- Actividad Administración de Cuentas -->
+        <activity
+            android:name=".CuentasActivity"
+            android:exported="false" />
+
+        <!-- Actividad Compras y Agendamiento -->
+        <activity
+            android:name=".ComprasActivity"
+            android:exported="false" />
+
+        <!-- Actividad Gastos Compartidos y Deudas -->
+        <activity
+            android:name=".DeudasActivity"
+            android:exported="false" />
+
         <!-- Actividad Mapa Google Maps -->
         <activity
             android:name=".MapActivity"
